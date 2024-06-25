@@ -5,8 +5,8 @@ const { check } = require("express-validator")
 
 const router = Router();
 
-router.get("/", [check("userId").not().isEmpty(), checkFields], getUser);
+router.get("/",   getUser);
 
-router.put("/", [check("userId").not().isEmpty(), checkFields], updateUserById);
+router.put("/",   updateUserById);
 
 export default router;

@@ -10,7 +10,7 @@ export const signupHandlerService = async (user) => {
         // Creando un nuevo usuario
         const newUser = new User({
           name:user.name,
-          lastName:user.lastName,
+          lastName:user.lastname,
           email:user.email,
           password: user.password,
         }); 
@@ -21,7 +21,6 @@ export const signupHandlerService = async (user) => {
         const token = jwt.sign({ id: savedUser._id }, SECRET_JWT, {
           expiresIn: 86400, // 24 horas
         });
-    
         return token; 
       } catch (error) {
         throw Error(error.message);

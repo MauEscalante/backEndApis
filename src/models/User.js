@@ -29,10 +29,6 @@ const userSchema = new Schema(
             type: String,
             required: true,
           },
-          release_date: {
-            type: String,
-            required: true,
-          },
           overview: {
             type: String,
             required: true,
@@ -56,10 +52,7 @@ const userSchema = new Schema(
             type: String,
             required: true,
           },
-          release_date: {
-            type: String,
-            required: true,
-          },
+  
           overview: {
             type: String,
             required: true,
@@ -83,10 +76,7 @@ const userSchema = new Schema(
             type: String,
             required: true,
           },
-          release_date: {
-            type: String,
-            required: true,
-          },
+  
           overview: {
             type: String,
             required: true,

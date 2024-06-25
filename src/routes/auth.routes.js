@@ -15,10 +15,10 @@ router.use((req, res, next) => {
 
 ////////AUTENTIFICACION EN LA PAG/////////////////
 router.post(
-  "/signup",
+  "/singup",
   [
     check("name").not().isEmpty(),
-    check("lastName").not().isEmpty(),
+    check("lastname").not().isEmpty(),
     check("email").not().isEmpty(),
     check("password").not().isEmpty(),
     checkFields,

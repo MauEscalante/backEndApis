@@ -17,13 +17,11 @@ export const getInFavoriteService = async (userId, movieId) => {
   try {
     const user = await User.findOne({ _id: userId }).populate("favorites");
     if (!user) throw new Error("User not found.");
-    const favorite = user.favorites.find((movie) => movie._id === movieId);
-    if (favorite == -1) {
-      console.log(favorite,"no esta en favoritos")
-      return false;
-    }else{
-      return true;
-    }
+   
+    const favorite = user.favorites.find((movie) =>  movie._id===Number(movieId));
+    if (!favorite) return false;
+    return true;
+    
     
   } catch (error) {
     if (error.message === "User not found.") throw new Error("User not found.");
@@ -76,8 +74,8 @@ export const getInWatchLaterService = async (userId, movieId) => {
   try {
     const user = await User.findOne({ _id: userId }).populate("watchLater");
     if (!user) throw new Error("User not found.");
-    const watchLater = user.watchLater.find((movie) => movie._id === movieId);
-    if (watchLater == -1) return false;
+    const watchLater = user.watchLater.find((movie) =>movie._id===Number(movieId));
+    if (!watchLater) return false;
     return true;
   } catch (error) {
     if (error.message === "User not found.") throw new Error("User not found.");
@@ -131,8 +129,8 @@ export const getInWatchedService = async (userId, movieId) => {
   try {
     const user = await User.findOne({ _id: userId }).populate("watched");
     if (!user) throw new Error("User not found.");
-    const watched = user.watched.find((movie) => movie._id === movieId);
-    if (watched == -1) return false;
+    const watched = user.watched.find((movie) => movie._id===Number(movieId));
+    if (!watched) return false;
     return true;
   } catch (error) {
     if (error.message === "User not found.") throw new Error("User not found.");

@@ -85,21 +85,20 @@ export const getWatchLater = async (req, res) => {
 
 export const addWatchLater = async (req, res) => {
     try {
+       
         const decodedToken = jwt.verify(req.headers["x-acces-token"], SECRET_JWT);
         const userId = decodedToken.id;
         const movie = {
-            _id: req.body._id ,
+            _id: req.body.id ,
             title: req.body.title,
-            release_date: req.body.release_date,
             overview: req.body.overview,
             poster_path:req.body.poster_path
         }
 
-
         const response = await addWatchLaterService(userId, movie);
         return res.status(200).json({ response });
     } catch (error) {
-        res.status(400).json(error.message);
+        res.status(500).json(error.message);
     }
 };
 
@@ -151,16 +150,15 @@ export const getWatched = async (req, res) => {
 
 export const addWatched = async (req, res) => {
     try {
+       
         const decodedToken = jwt.verify(req.headers["x-acces-token"], SECRET_JWT);
         const userId = decodedToken.id;
         const movie = {
-            _id: req.body._id ,
+            _id: req.body.id ,
             title: req.body.title,
-            release_date: req.body.release_date,
             overview: req.body.overview,
             poster_path:req.body.poster_path
         }
-
 
         const response = await addWatchedService(userId, movie);
         return res.status(200).json({ response });
@@ -173,14 +171,14 @@ export const deleteWatched = async (req, res) => {
     try {
         const decodedToken = jwt.verify(req.headers["x-acces-token"], SECRET_JWT);
         const userId = decodedToken.id;
-        const movieId = req.body._id;
- 
-        const response = await deleteWatchedService(userId, movieId);
-        return res.status(200).json({ response });
- 
-     } catch (error) {
-         res.status(500).json(error.message);
-     }
+       const movieId = req.body._id;
+
+       const response = await deleteWatchedService(userId, movieId);
+       return res.status(200).json({ response });
+
+    } catch (error) {
+        res.status(400).json(error.message);
+    }
 };
 
 export const getInWatched = async (req, res) => {

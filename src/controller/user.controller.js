@@ -42,7 +42,6 @@ export const getCode = async (req, res) => {
         "Password Reset Code",
         `Your password reset code is: ${code}`
       );
-      console.log(code,"Estoy en controller")
       res
         .status(200)
         .json({token});

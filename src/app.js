@@ -8,7 +8,7 @@ import listRoutes from "./routes/lists.routes.js"
 
 const app=express()
 
-app.use(cors({ origin: 'http://localhost:3001' }));
+app.use(cors({ origin: 'http://localhost:3000' }));
 
 /////////////MIDDLEWARES///////////////
 app.use(express.urlencoded({extended:true}))

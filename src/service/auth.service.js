@@ -14,7 +14,7 @@ export const signupHandlerService = async (user) => {
           email:user.email,
           password: user.password,
         }); 
-    
+        
         // Guardando el usuario en la base de datos
         const savedUser = await newUser.save();
         // Creando un token de autenticación
@@ -23,6 +23,7 @@ export const signupHandlerService = async (user) => {
         });
         return token; 
       } catch (error) {
+        console.log(error)
         throw Error(error.message);
       }
 }

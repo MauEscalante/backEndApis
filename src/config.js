@@ -1,7 +1,7 @@
 import { config } from "dotenv";
 config();
 
-export const PORT =  3000;
+export const PORT =  8000;
 export const HOST = "http://localhost:" + PORT;
 
 export const SECRET_JWT = "LaRePeli";

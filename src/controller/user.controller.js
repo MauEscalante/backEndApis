@@ -27,7 +27,6 @@ const sendEmail = (to, subject, text) => {
 export const getCode = async (req, res) => {
   try {
     const { email } = req.query;
-   
     const userFound =getUserService(email);
 
     if (userFound) {

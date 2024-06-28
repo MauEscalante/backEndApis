@@ -16,10 +16,16 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-acces-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2N2IzNTE4YjRkNWI0NzBkZjg0MWM0NyIsImVtYWlsIjoiZXNjYWxhbnRlbWF1cmljaW8yMDAyQGdtYWlsLmNvbSIsImlhdCI6MTcxOTU5NDU5MCwiZXhwIjoxNzE5NjgwOTkwfQ.cAKxBHbzBsLcHt69wy6etiqEPUrV5d1xndh91Npubow",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userId\":\"6669f704c826d62b4247d282\"\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -37,7 +43,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Camila\",\r\n    \"lastName\":\"Castiloo\",\r\n    \"email\":\"camcastillo@uade.edu.ar\",\r\n    \"password\":\"123456\"\r\n}",
+							"raw": "{\r\n    \"name\":\"Mauricio\",\r\n    \"lastname\":\"Escalante\",\r\n    \"email\":\"mauescalante@uade.edu.ar\",\r\n    \"password\":\"Mauricio8!\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -55,7 +61,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"camcastillo@uade.edu.ar\",\r\n    \"password\": \"123456\"\r\n}",
+							"raw": "{\r\n    \"email\": \"escalantemauricio2002@gmail.com\",\r\n    \"password\": \"Mauricio8!\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -70,10 +76,16 @@
 					"name": "updatePassword",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "x-acces-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2N2IzNTE4YjRkNWI0NzBkZjg0MWM0NyIsImVtYWlsIjoiZXNjYWxhbnRlbWF1cmljaW8yMDAyQGdtYWlsLmNvbSIsImlhdCI6MTcxOTU5NDU5MCwiZXhwIjoxNzE5NjgwOTkwfQ.cAKxBHbzBsLcHt69wy6etiqEPUrV5d1xndh91Npubow",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userId\":\"6669f704c826d62b4247d282\",\r\n    \"password\":\"123456\"\r\n}",
+							"raw": "{\r\n    \"password\": \"Escalante1218!\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -81,6 +93,71 @@
 							}
 						},
 						"url": "http://localhost:3000/user/"
+					},
+					"response": []
+				},
+				{
+					"name": "getCode",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"escalantemauricio2002@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/user/getCode"
+					},
+					"response": []
+				},
+				{
+					"name": "validateCode",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-acces-token",
+								"value": ".eyJlbWFpbCI6ImVzY2FsYW50ZW1hdXJpY2lvMjAwMkBnbWFpbC5jb20iLCJjb2RlIjo1NDc3MywiaWF0IjoxNzE5NTk1MTA1LCJleHAiOjE3MTk1OTg3MDV9.emuE2mqciqY1oy7sdQ9SJPx7FdPDr9zjw3xSsgD_jMw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\":41437\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/validateCode?code=41437",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"validateCode"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "41437"
+								}
+							]
+						}
 					},
 					"response": []
 				}
@@ -93,10 +170,16 @@
 					"name": "addFavorites",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "x-acces-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2N2IzNTE4YjRkNWI0NzBkZjg0MWM0NyIsImVtYWlsIjoiZXNjYWxhbnRlbWF1cmljaW8yMDAyQGdtYWlsLmNvbSIsImlhdCI6MTcxOTU5NTI3NiwiZXhwIjoxNzE5NjgxNjc2fQ.HXiMXnBjqelBX1sWEUie7RCDeVjyDyg90sG9Dk4Mox4",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userId\":\"6669f704c826d62b4247d282\",\r\n    \"_id\": 1011985,\r\n    \"title\": \"Kung Fu Panda 4\",\r\n    \"release_date\": \"2024-03-02\",\r\n    \"overview\": \"Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.\",\r\n    \"poster_path\": \"/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg\"\r\n}",
+							"raw": "{\r\n    \"id\": 1011985,\r\n    \"title\": \"Kung Fu Panda 4\",\r\n    \"overview\": \"Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.\",\r\n    \"poster_path\": \"/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -114,10 +197,16 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-acces-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzlmMGQ2NWIxZjY3NjAxYWNkYTM1NiIsImlhdCI6MTcxOTMyNDQzNiwiZXhwIjoxNzE5NDEwODM2fQ.ZXzmvZC0frB6rtzqIYYm7R4_D_UN6Z9bER9lmQJvZr4",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userId\":\"6669f704c826d62b4247d282\"\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -132,10 +221,16 @@
 					"name": "deleteFavorite",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "x-acces-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzlmMGQ2NWIxZjY3NjAxYWNkYTM1NiIsImlhdCI6MTcxOTMyNDQzNiwiZXhwIjoxNzE5NDEwODM2fQ.ZXzmvZC0frB6rtzqIYYm7R4_D_UN6Z9bER9lmQJvZr4",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userId\":\"6669f704c826d62b4247d282\",\r\n    \"_id\": 1011985,\r\n    \"title\": \"Kung Fu Panda 4\",\r\n    \"release_date\": \"2024-03-02\",\r\n    \"overview\": \"Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.\",\r\n    \"poster_path\": \"/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg\"\r\n}",
+							"raw": "{\r\n    \"_id\": 1011985\r\n    \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -150,10 +245,16 @@
 					"name": "addWatched",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "x-acces-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2N2IzNTE4YjRkNWI0NzBkZjg0MWM0NyIsImVtYWlsIjoiZXNjYWxhbnRlbWF1cmljaW8yMDAyQGdtYWlsLmNvbSIsImlhdCI6MTcxOTU5NTI3NiwiZXhwIjoxNzE5NjgxNjc2fQ.HXiMXnBjqelBX1sWEUie7RCDeVjyDyg90sG9Dk4Mox4",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userId\":\"6669f704c826d62b4247d282\",\r\n    \"_id\": 1011985,\r\n    \"title\": \"Kung Fu Panda 4\",\r\n    \"release_date\": \"2024-03-02\",\r\n    \"overview\": \"Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.\",\r\n    \"poster_path\": \"/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg\"\r\n}",
+							"raw": "{\r\n    \"id\": 1011985,\r\n    \"title\": \"Kung Fu Panda 4\",\r\n    \"release_date\": \"2024-03-02\",\r\n    \"overview\": \"Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.\",\r\n    \"poster_path\": \"/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -189,10 +290,16 @@
 					"name": "deleteWatched",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "x-acces-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2N2IzNTE4YjRkNWI0NzBkZjg0MWM0NyIsImVtYWlsIjoiZXNjYWxhbnRlbWF1cmljaW8yMDAyQGdtYWlsLmNvbSIsImlhdCI6MTcxOTU5NTI3NiwiZXhwIjoxNzE5NjgxNjc2fQ.HXiMXnBjqelBX1sWEUie7RCDeVjyDyg90sG9Dk4Mox4",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userId\":\"6669f704c826d62b4247d282\",\r\n    \"_id\": 1011985,\r\n    \"title\": \"Kung Fu Panda 4\",\r\n    \"release_date\": \"2024-03-02\",\r\n    \"overview\": \"Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.\",\r\n    \"poster_path\": \"/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg\"\r\n}",
+							"raw": "{\r\n    \"_id\": 1011985\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -210,7 +317,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userId\":\"6669f704c826d62b4247d282\",\r\n    \"_id\": 984324,\r\n    \"title\": \"The wages of fear\",\r\n    \"release_date\": \" 2024-03-02 \",\r\n    \"overview\": \"When an explosion at an oil well threatens hundreds of lives, a crack team is called upon to make a deadly desert crossing with nitroglycerine in tow. \",\r\n    \"poster_path\": \"/jFK2ZLQUzo9pea0jfMCHDfvWsx7.jpg\"\r\n}",
+							"raw": "{\r\n    \"id\": 984324,\r\n    \"title\": \"The wages of fear\",\r\n    \"release_date\": \" 2024-03-02 \",\r\n    \"overview\": \"When an explosion at an oil well threatens hundreds of lives, a crack team is called upon to make a deadly desert crossing with nitroglycerine in tow. \",\r\n    \"poster_path\": \"/jFK2ZLQUzo9pea0jfMCHDfvWsx7.jpg\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -228,10 +335,16 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-acces-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzlmMGQ2NWIxZjY3NjAxYWNkYTM1NiIsImlhdCI6MTcxOTMyNDQzNiwiZXhwIjoxNzE5NDEwODM2fQ.ZXzmvZC0frB6rtzqIYYm7R4_D_UN6Z9bER9lmQJvZr4",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userId\":\"6669f704c826d62b4247d282\"\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -257,6 +370,51 @@
 							}
 						},
 						"url": "http://localhost:3000/lists/watchLater"
+					},
+					"response": []
+				},
+				{
+					"name": "getInFavorite",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-acces-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2N2IzNTE4YjRkNWI0NzBkZjg0MWM0NyIsImVtYWlsIjoiZXNjYWxhbnRlbWF1cmljaW8yMDAyQGdtYWlsLmNvbSIsImlhdCI6MTcxOTU5NTI3NiwiZXhwIjoxNzE5NjgxNjc2fQ.HXiMXnBjqelBX1sWEUie7RCDeVjyDyg90sG9Dk4Mox4",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/lists/favorites/1022789"
+					},
+					"response": []
+				},
+				{
+					"name": "getInWatchLater",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-acces-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2N2IzNTE4YjRkNWI0NzBkZjg0MWM0NyIsImVtYWlsIjoiZXNjYWxhbnRlbWF1cmljaW8yMDAyQGdtYWlsLmNvbSIsImlhdCI6MTcxOTU5NTI3NiwiZXhwIjoxNzE5NjgxNjc2fQ.HXiMXnBjqelBX1sWEUie7RCDeVjyDyg90sG9Dk4Mox4",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/lists/favorites/1022789"
+					},
+					"response": []
+				},
+				{
+					"name": "getInWatched",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-acces-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2N2IzNTE4YjRkNWI0NzBkZjg0MWM0NyIsImVtYWlsIjoiZXNjYWxhbnRlbWF1cmljaW8yMDAyQGdtYWlsLmNvbSIsImlhdCI6MTcxOTU5NTI3NiwiZXhwIjoxNzE5NjgxNjc2fQ.HXiMXnBjqelBX1sWEUie7RCDeVjyDyg90sG9Dk4Mox4",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:3000/lists/watched/1022789"
 					},
 					"response": []
 				}

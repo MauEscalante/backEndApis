@@ -31,6 +31,7 @@ export const signinHandlerService = async (user) => {
     try {
         // Buscando el usuario en la base de datos
         const userFound = await User.findOne({ email: user.email });
+      
     
         const matchPassword = await User.comparePassword(
           user.password,
@@ -45,7 +46,6 @@ export const signinHandlerService = async (user) => {
         const token = jwt.sign({ id: userFound._id, email: userFound.email }, SECRET_JWT, {
           expiresIn: 86400, // 24 horas
         });
-    
         return token; 
       } catch (error) {
         throw Error(error.message);

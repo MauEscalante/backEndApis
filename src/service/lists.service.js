@@ -36,7 +36,7 @@ export const addFavoritesService = async (userId, movie) => {
 
     user.favorites.push(movie);
     const save = await user.save();
-    return save;
+    return {favorites: save.favorites};
   } catch (error) {
     throw new Error(error.message);
   }
@@ -51,7 +51,7 @@ export const deleteFavoritesService = async (userId, movieId) => {
     if (index === -1) throw new Error("Movie not found.");
     user.favorites.splice(index, 1);
     const save = await user.save();
-    return save;
+    return {favorites: save.favorites};
   } catch (error) {
     throw new Error(error.message);
   }
@@ -90,7 +90,7 @@ export const addWatchLaterService = async (userId, movie) => {
 
     user.watchLater.push(movie);
     const save = await user.save();
-    return save;
+    return {watchLater: save.watchLater};
   } catch (error) {
     throw new Error(error.message);
   }
@@ -105,7 +105,7 @@ export const deleteWatchLaterService = async (userId, movieId) => {
     if (index === -1) throw new Error("Movie not found.");
     user.watchLater.splice(index, 1);
     const save = await user.save();
-    return save;
+    return {watchLater: save.watchLater};
   } catch (error) {
     throw new Error(error.message);
   }
@@ -145,7 +145,7 @@ export const addWatchedService = async (userId, movie) => {
 
     user.watched.push(movie);
     const save = await user.save();
-    return save;
+    return {watched: save.watched};
   } catch (error) {
     throw new Error(error.message);
   }
@@ -159,7 +159,7 @@ export const deleteWatchedService = async (userId, movieId) => {
     if (index === -1) throw new Error("Movie not found.");
     user.watched.splice(index, 1);
     const save = await user.save();
-    return save;
+    return {watched: save.watched};
   } catch (error) {
     throw new Error(error.message);
   }

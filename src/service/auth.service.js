@@ -18,7 +18,7 @@ export const signupHandlerService = async (user) => {
         // Guardando el usuario en la base de datos
         const savedUser = await newUser.save();
         // Creando un token de autenticación
-        const token = jwt.sign({ id: savedUser._id }, SECRET_JWT, {
+        const token = jwt.sign({ id: savedUser._id, email: savedUser.email }, SECRET_JWT, {
           expiresIn: 86400, // 24 horas
         });
         return token; 
@@ -40,7 +40,9 @@ export const signinHandlerService = async (user) => {
         if (!matchPassword)
           throw new Error("Contraseña inválida"); 
     
-        const token = jwt.sign({ id: userFound._id }, SECRET_JWT, {
+
+
+        const token = jwt.sign({ id: userFound._id, email: userFound.email }, SECRET_JWT, {
           expiresIn: 86400, // 24 horas
         });
     
